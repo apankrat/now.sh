@@ -39,7 +39,7 @@ The timestamp format can be adjusted by passing the
 [`date`](http://en.wikipedia.org/wiki/Date_%28Unix%29) 
 format string to `now`. For example, this tweak -
 
-    tail -F access.log | grep "GET / "  now "[%d/%b/%Y %H:%M:%S %z]"
+    tail -F access.log | grep "GET / " | now "[%d/%b/%Y %H:%M:%S %z]"
 
 yields -
 
