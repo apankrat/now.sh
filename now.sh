@@ -1,12 +1,14 @@
 #!/bin/bash
 
 #
-#	see what 'read -t' returns on timeout
+#	See what 'read -t' returns on timeout.
 #
-> ~/.now.sh.tmp
-read -t 1 < ~/.now.sh.tmp
+#	For that - read from stdout. Alternatively, it could read 
+#	from /dev/zero, but it's not available under Cygwin and 
+#	in other non-*nix environments
+#
+read -t 1 <&1
 timeout=$?
-rm ~/.now.sh.tmp
 
 #
 #	loop forever
