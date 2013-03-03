@@ -1,3 +1,6 @@
+now.sh
+======
+
 A simple shell script that prints current date/time while waiting 
 for an input and echoing it to the stdout.
 
@@ -25,8 +28,11 @@ and get -
 
 where the last line is updated to current time every second.
 
-Or better yet, pass the 
-[`date`](http://en.wikipedia.org/wiki/Date_%28Unix%29) format to `now`
+Timestamp format
+================
+
+Pass the [`date`](http://en.wikipedia.org/wiki/Date_%28Unix%29) format string
+to `now` like so -
 
     tail -F access.log | grep "GET / "  now +"[%d/%b/%Y %H:%M:%S %z]"
 
