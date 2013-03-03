@@ -32,5 +32,5 @@ do
 	else
 		now=`date`
 	fi
-        echo -ne "$now\r"
+        echo -ne "$now\r" >&2
 done
