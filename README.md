@@ -1,7 +1,7 @@
 A simple shell script that prints current date/time while waiting 
 for an input and echoing it to the stdout.
 
-It is particularly useful with [`tail`](http://en.wikipedia.org/wiki/Tail_(Unix)) 
+It is particularly useful with [`tail`](http://en.wikipedia.org/wiki/Tail_%28Unix%29) 
 when following log files. Instead of - 
 
     tail -F access.log | grep "GET / "
