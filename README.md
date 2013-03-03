@@ -32,6 +32,11 @@ This gives
 an idea of when the last log activity was without needing to remember what 
 the server time zone is or what the "-0800" translates to in your local time.
 
+Installation
+============
+
+    curl -o /usr/local/bin/now https://raw.github.com/apankrat/now.sh/master/now.sh; chmod 744 /usr/local/bin/now
+
 Timestamp format
 ================
 
