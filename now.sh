@@ -14,7 +14,7 @@ rm ~/.now.sh.tmp
 while true
 do
 	#
-	#	relay stdin
+	#	relay stdin to stdout
 	#
         while true
         do
@@ -25,7 +25,7 @@ do
         if [ $rc != $timeout ]; then break; fi
 	
 	#
-	#	print timestamp
+	#	print the timestamp
 	#
 	if [ $# -eq 1 ]; then 
 		now=`date +"$1"`
