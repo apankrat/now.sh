@@ -31,12 +31,13 @@ where the last line is updated to current time every second.
 Timestamp format
 ================
 
-Pass the [`date`](http://en.wikipedia.org/wiki/Date_%28Unix%29) format string
-to `now` like so -
+The timestamp format can be adjusted by passing the 
+[`date`](http://en.wikipedia.org/wiki/Date_%28Unix%29) 
+format string to `now`. For example, this tweak -
 
-    tail -F access.log | grep "GET / "  now +"[%d/%b/%Y %H:%M:%S %z]"
+    tail -F access.log | grep "GET / "  now "[%d/%b/%Y %H:%M:%S %z]"
 
-and get this -
+yields -
 
     173.199.116.xx - - [03/Mar/2013 01:05:18 -0800] "GET / HTTP/1.1" 200 2249 ...
     59.167.170.xx - - [03/Mar/2013 01:10:19 -0800] "GET / HTTP/1.1" 200 2307 ...
