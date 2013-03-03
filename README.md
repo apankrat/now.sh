@@ -26,9 +26,9 @@ and get -
     54.251.76.xx - - [03/Mar/2013 01:16:52 -0800] "GET / HTTP/1.1" 200 2223 ...
     Mar  3 01:20:59 PST 2013
 
-where the last line is updated to current time every second. This gives an
-idea of when the last log activity was without needing to remember what 
--0800 translates to in your local time.
+where the last line is updated to the current time every second. This gives 
+an idea of when the last log activity was without needing to remember what 
+the server time zone is or what the "-0800" translates to in your local time.
 
 Timestamp format
 ================
