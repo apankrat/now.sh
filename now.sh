@@ -10,9 +10,9 @@ do
 	#
         while true
         do
-                read -t 1 line; rc=$?
+                IFS= read -r -t 1 line; rc=$?
                 if [ $rc != 0 ]; then break; fi
-                echo $line
+                echo "$line"
         done
 	#
 	#	exit status is greater than 128 if the timeout is exceeded
