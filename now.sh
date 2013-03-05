@@ -22,10 +22,6 @@ do
 	#
 	#	print the timestamp
 	#
-	if [ $# -eq 1 ]; then
-		now=`date +"$1"`
-	else
-		now=`date`
-	fi
+        now=`date ${1:++"$1"}`
         echo -ne "$now\r" >&2
 done
