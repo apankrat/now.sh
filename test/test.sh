@@ -17,5 +17,5 @@ test_input_output()
 
 test_input_output 'Glob pattern'        '*'
 test_input_output 'Spaces'              'foo   bar'
-test_input_output 'LF at EOL'           'foo\'"$lf"' barbar'
+test_input_output 'Backslash at EOL'    'foo\'"$lf"' barbar'
 
