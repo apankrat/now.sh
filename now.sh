@@ -1,16 +1,6 @@
 #!/bin/bash
 
 #
-#	See what 'read -t' returns on timeout.
-#
-#	For that - read from stdout. Alternatively, it could read
-#	from /dev/zero, but it's not available under Cygwin and
-#	in other non-*nix environments
-#
-read -t 1 <&1
-timeout=$?
-
-#
 #	loop forever
 #
 while true
@@ -24,7 +14,10 @@ do
                 if [ $rc != 0 ]; then break; fi
                 echo $line
         done
-        if [ $rc != $timeout ]; then break; fi
+	#
+	#	exit status is greater than 128 if the timeout is exceeded
+	#
+	if [ $rc -le 128 ]; then break; fi
 
 	#
 	#	print the timestamp
