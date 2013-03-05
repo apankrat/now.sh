@@ -3,8 +3,8 @@
 #
 #	See what 'read -t' returns on timeout.
 #
-#	For that - read from stdout. Alternatively, it could read 
-#	from /dev/zero, but it's not available under Cygwin and 
+#	For that - read from stdout. Alternatively, it could read
+#	from /dev/zero, but it's not available under Cygwin and
 #	in other non-*nix environments
 #
 read -t 1 <&1
@@ -25,11 +25,11 @@ do
                 echo $line
         done
         if [ $rc != $timeout ]; then break; fi
-	
+
 	#
 	#	print the timestamp
 	#
-	if [ $# -eq 1 ]; then 
+	if [ $# -eq 1 ]; then
 		now=`date +"$1"`
 	else
 		now=`date`
