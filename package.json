@@ -1,0 +1,9 @@
+{
+  "name": "now",
+  "version": "0.0.1",
+  "description": "Pipeable bash script that prints current time while waiting for an input from stdin",
+  "global": "true",
+  "install": "install now.sh /usr/local/bin/now",
+  "scripts": [ "now.sh" ]
+}
+
