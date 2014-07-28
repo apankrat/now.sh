@@ -12,9 +12,18 @@
 #  true with a number of bash implementations, most notably
 #  including GNU bash that returns 1 instead.
 #
+
+cleanup(){
+        # make sure to put a newline at the end of output, that
+        # way our prompt won't get written on the last timestamp
+        echo
+}
+trap cleanup SIGINT
+
 read -t 1 <&1
 timeout=$?
 
+did_timeout=0
 #
 #	loop forever
 #
@@ -27,6 +36,11 @@ do
         do
                 IFS= read -r -t 1 line; rc=$?
                 if [ $rc != 0 ]; then break; fi
+                if [ $did_timeout != 0 ]; then
+                        # because otherwise we overwrite the time output, and that looks bad
+                        echo
+                        did_timeout=0
+                fi
                 echo "$line"
         done
 	#
@@ -39,4 +53,5 @@ do
 	#
         now=`date ${1:++"$1"}`
         echo -ne "$now\r" >&2
+        did_timeout=1
 done
